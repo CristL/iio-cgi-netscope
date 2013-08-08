@@ -22,4 +22,6 @@ install:
 	install ./thttpd_init.sh $(DESTDIR)/bin/
 	chmod +x $(DESTDIR)/bin/thttpd_init.sh
 	cp -a ./www/* /var/www/
+	install -d /var/www/data/cgi-bin/
+	install -d /var/www/logs
 	install ndso /var/www/data/cgi-bin/ndso.cgi
