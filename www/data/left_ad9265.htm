@@ -1,0 +1,138 @@
+<html>
+
+<head>
+<title>NDSO Input Form</title>
+<link rel="stylesheet" href="/style.css" type="text/css">
+</head>
+
+<body>
+
+<form method="POST" action="/cgi-bin/ndso.cgi" target="main">
+
+ <fieldset>
+  <legend>Horizontal</legend>
+  <input type="text" name="T3" size="4" value="400" maxlength="7"> Depth
+  <br>
+  Range
+  <input type="text" name="xrangeS" size="5" maxlength="9" value="*">
+  <input type="text" name="xrangeE" size="5" maxlength="9" value="*">
+  [t1:t2]
+ </fieldset>
+
+ <fieldset>
+  <legend>Vertical</legend>
+  <select size="1" name="D5">
+   <option selected value="X">autoscale</option>
+  </select>
+ </fieldset>
+
+ <fieldset>
+  <legend>Display Options</legend>
+  <input type="checkbox" name="set_grid" value="ON"> Show Grid
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Size Ratio <input type="text" name="size_ratio" size="2" value="1">
+  <br>
+  <input type="checkbox" name="axis" value="ON"> Highlight Zeroaxis
+  <br>
+  <input type="radio" value="1" name="R3" checked> Time Domain
+  <br>
+  <input type="radio" value="0" name="R3"> Frequency Domain
+
+  <fieldset>
+   <legend>FFT</legend>
+   <select size="1" name="D8">
+    <option value="16">65536p FFT</option>
+    <option value="15">32768p FFT</option>
+    <option value="14">16384p FFT</option>
+    <option value="13">8192p FFT</option>
+    <option value="12">4096p FFT</option>
+    <option value="11">2048p FFT</option>
+    <option value="10" selected>1024p FFT</option>
+    <option value="9">512p FFT</option>
+    <option value="8">256p FFT</option>
+    <option value="7">128p FFT</option>
+    <option value="6">64p FFT</option>
+    <option value="5">32p FFT</option>
+    <option value="4">16p FFT</option>
+   </select>
+   <br>
+   <input type="checkbox" name="C8" value="ON" checked> Scaled
+   <input type="checkbox" name="C7" value="ON" checked> Omit F(0)
+   <input type="checkbox" name="C9" value="ON" checked> Window
+   <input type="checkbox" name="C12" value="ON"> HW FFT
+  </fieldset>
+ </fieldset>
+
+ <fieldset>
+  <legend>Plot Style</legend>
+  <select size="1" name="linestyle">
+   <option selected value="linespoints">lines points</option>
+   <option value="points">points</option>
+   <option value="dots">dots</option>
+   <option value="lines">lines</option>
+   <option value="impulses">impulses</option>
+   <option value="fsteps">fsteps</option>
+   <option value="histeps">histeps</option>
+   <option value="boxes">boxes</option>
+   <option value="steps">steps</option>
+  </select>
+  <select size="1" name="color">
+   <option selected value="1">Red</option>
+   <option value="2">Green</option>
+   <option value="3">Blue</option>
+  </select>
+ </fieldset>
+
+ <fieldset>
+  <legend>Scale</legend>
+  <select size="1" name="logscale">
+   <option selected value="nologscale">linear</option>
+   <option value="logscale x">logscale Hor</option>
+   <option value="logscale y">logscale Ver</option>
+   <option value="logscale xy">logscale Hor/Ver</option>
+  </select>
+ </fieldset>
+
+ <fieldset>
+  <legend>Interpolate</legend>
+  <select size="1" name="smooth">
+   <option selected value="0">none</option>
+   <option value="unique">unique</option>
+  </select>
+ </fieldset>
+
+ <fieldset>
+  <legend>Channels</legend>
+  <input type="checkbox" name="C10" value="1" checked > CH0
+ </fieldset>
+
+ <fieldset>
+  <legend>Input</legend>
+
+  <select size="6" name="device">
+   <option selected value="cf-ad9265">AD9265-ADC-LPC</option>
+  </select>
+  <br>
+ </fieldset>
+
+ <fieldset>
+  <legend>Write/Read Device Register</legend>
+  <input type="text" name="REG" size="10" maxlength="10" value="0x000"> REGISTER
+  <br>
+  <input type="text" name="VAL" size="10" maxlength="10" value="0x00"> VALUE
+  <br>
+ <input type="submit" value="WRITE" name="B4">
+ <input type="submit" value="READ" name="B7">
+ </fieldset>
+
+ <input type="submit" value="Acquire Plot" name="B1">
+ <input type="submit" value="Acquire Save" name="B3">
+ <input type="submit" value="Show Device Files" name="B5">
+ <input type="submit" value="Files" name="B6">
+ <input type="submit" value="Test" name="B8">
+ <input type="reset" value="Default" name="B2">
+</form>
+
+</body>
+
+</html>
