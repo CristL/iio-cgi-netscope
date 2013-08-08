@@ -819,9 +819,9 @@ make_file_init(int form_method, char **getvars, char **postvars, s_info * info)
 			   info->stime_s.samples);
 		else
 			   fprintf (info->pFile_init,
-			   "plot  \"%s\" using ($1*%d/%d):($2) notitle %s  \nexit\n",
+			   "plot  \"%s\" using ($1*%d/%d):($2) \nexit\n",
 			   info->pFILENAME_T_OUT, info->stime_s.sps,
-			   info->stime_s.samples, postvars[info->sdisplay.color]);
+			   info->stime_s.samples);
 		}
 	      else
 		{
@@ -834,8 +834,8 @@ make_file_init(int form_method, char **getvars, char **postvars, s_info * info)
 			   info->pFILENAME_T_OUT, info->pFILENAME_T_OUT2);
 		else
 			   fprintf (info->pFile_init,
-			   "plot  \"%s\" using 1:($2) notitle %s  \nexit\n",
-			   info->pFILENAME_T_OUT, postvars[info->sdisplay.color]);
+			   "plot  \"%s\" using 1:($2) \nexit\n",
+			   info->pFILENAME_T_OUT);
 		}
 	}
 
